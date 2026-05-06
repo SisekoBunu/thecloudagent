@@ -26,12 +26,12 @@ function changeBackground() {
     heroBg.style.backgroundImage = `url("${images[index]}")`;
     heroBg.style.opacity = 1;
     index = (index + 1) % images.length;
-  }, 600);
+  }, 700);
 }
 
 if (heroBg) {
   changeBackground();
-  setInterval(changeBackground, 6500);
+  setInterval(changeBackground, 10000);
 }
 
 if (menuToggle && siteNav) {
