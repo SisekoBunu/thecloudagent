@@ -1,0 +1,413 @@
+﻿:root{
+  --bg:#02060c;
+  --bg-soft:#07111f;
+  --text:#f5fbff;
+  --muted:#b7c8d8;
+  --line:rgba(91,196,255,0.22);
+  --blue:#00aaff;
+  --blue-soft:#63d8ff;
+  --green:#5cff8d;
+  --max:1200px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* HEADER */
+
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 28px;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.88), rgba(0,0,0,0.25), rgba(0,0,0,0));
+}
+
+.brand-logo{
+  display:flex;
+  align-items:center;
+  height:54px;
+}
+
+.brand-logo img{
+  height:54px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+
+.site-nav{
+  display:flex;
+  gap:24px;
+}
+
+.site-nav a{
+  font-size:0.75rem;
+  text-transform:uppercase;
+  letter-spacing:0.16em;
+  opacity:0.9;
+  font-weight:800;
+}
+
+.site-nav a:hover{
+  color:var(--blue-soft);
+}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.menu-toggle span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#fff;
+  margin:5px 0;
+}
+
+/* HOME */
+
+.home-page{
+  overflow:hidden;
+}
+
+.home-hero{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:1;
+  transition:opacity 1.2s ease-in-out;
+  z-index:0;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(to right, rgba(0,0,0,0.86), rgba(0,0,0,0.38), rgba(0,0,0,0.18)),
+    linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.10));
+}
+
+.home-content{
+  position:relative;
+  z-index:2;
+  width:min(92%, var(--max));
+  margin:0 auto;
+  padding-top:70px;
+}
+
+.eyebrow,
+.section-kicker{
+  font-size:0.78rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:0.22em;
+  color:var(--blue-soft);
+  margin:0 0 18px;
+}
+
+.home-content h1,
+.page-intro h1{
+  margin:0;
+  font-size:clamp(2.8rem, 7vw, 6.4rem);
+  line-height:0.96;
+  max-width:980px;
+  font-weight:900;
+  text-transform:uppercase;
+  text-shadow:0 12px 40px rgba(0,0,0,0.8);
+}
+
+.home-content p{
+  max-width:700px;
+  font-size:clamp(1rem, 2vw, 1.35rem);
+  line-height:1.45;
+  font-weight:600;
+}
+
+/* BUTTONS */
+
+.hero-buttons,
+.contact-card{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:32px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:50px;
+  padding:0 24px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.28);
+  font-size:0.78rem;
+  font-weight:900;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  transition:all 0.25s ease;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg, var(--blue), var(--green));
+  color:#00111e;
+  border:none;
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+/* INNER PAGES */
+
+.page-content{
+  width:min(92%, var(--max));
+  margin:0 auto;
+  min-height:100vh;
+  padding:135px 0 70px;
+}
+
+.page-intro{
+  max-width:950px;
+  margin-bottom:40px;
+}
+
+.page-intro p{
+  color:var(--muted);
+  font-size:1.1rem;
+  line-height:1.7;
+  max-width:760px;
+}
+
+.grid-cards{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+}
+
+.grid-card,
+.step-card,
+.contact-card,
+.extra-note{
+  background:linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:28px;
+  box-shadow:0 18px 50px rgba(0,0,0,0.24);
+}
+
+.grid-card h3,
+.step-card h3{
+  margin:0 0 12px;
+  font-size:1.1rem;
+}
+
+.grid-card p,
+.step-card p,
+.extra-note p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+/* HOW */
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:20px;
+}
+
+.step-card span{
+  display:block;
+  color:var(--blue-soft);
+  font-size:0.85rem;
+  font-weight:900;
+  letter-spacing:0.2em;
+  margin-bottom:18px;
+}
+
+/* PLANS */
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:22px;
+}
+
+.price-card{
+  position:relative;
+  background:linear-gradient(180deg, #f7f2e7, #fff8ea);
+  color:#06101d;
+  border-radius:26px;
+  padding:34px 26px;
+  text-align:center;
+  box-shadow:0 22px 65px rgba(0,0,0,0.35);
+}
+
+.price-card.featured{
+  border:3px solid var(--green);
+}
+
+.price-badge{
+  position:absolute;
+  top:-16px;
+  left:50%;
+  transform:translateX(-50%);
+  background:linear-gradient(135deg, #1f9d44, var(--green));
+  color:#00170a;
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:0.7rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.price-card h3{
+  margin:0;
+  font-size:2.2rem;
+}
+
+.price{
+  margin:18px 0 6px;
+  font-size:3rem;
+  font-weight:900;
+}
+
+.price span{
+  display:block;
+  font-size:0.9rem;
+}
+
+.price-card p{
+  color:#223247;
+  line-height:1.55;
+  font-weight:600;
+}
+
+.price-card .btn{
+  margin-top:20px;
+  width:100%;
+}
+
+.extra-note{
+  margin-top:24px;
+}
+
+/* CONTACT */
+
+.contact-page{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.contact-card{
+  max-width:520px;
+}
+
+.contact-card .btn{
+  width:100%;
+}
+
+/* MOBILE */
+
+@media (max-width:1000px){
+  .grid-cards,
+  .pricing-grid,
+  .steps{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:760px){
+  .menu-toggle{
+    display:block;
+    z-index:1002;
+  }
+
+  .site-nav{
+    position:absolute;
+    top:72px;
+    right:18px;
+    display:none;
+    flex-direction:column;
+    gap:14px;
+    background:rgba(2,6,12,0.96);
+    border:1px solid var(--line);
+    padding:18px;
+    border-radius:16px;
+    min-width:220px;
+  }
+
+  .site-nav.open{
+    display:flex;
+  }
+
+  .brand-logo img{
+    height:44px;
+  }
+
+  .home-content h1,
+  .page-intro h1{
+    font-size:clamp(2.3rem, 13vw, 4rem);
+  }
+
+  .grid-cards,
+  .pricing-grid,
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .page-content{
+    padding-top:115px;
+  }
+
+  .btn{
+    width:100%;
+  }
+}
