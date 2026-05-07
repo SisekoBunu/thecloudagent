@@ -42,7 +42,7 @@ a{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:12px 28px;
+  padding:12px 28px 12px 4px;
   background:#02060c;
 }
 
@@ -50,6 +50,7 @@ a{
   display:flex;
   align-items:center;
   height:110px;
+  margin-left:-6px;
 }
 
 .brand-logo img{
@@ -434,6 +435,7 @@ a{
 
   .brand-logo{
     height:74px;
+    margin-left:-8px;
   }
 
   .brand-logo img{
