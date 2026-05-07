@@ -7,6 +7,89 @@
 <title>Contact | The Cloud Agent</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+.contact-visual{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+  overflow:hidden;
+}
+
+.contact-visual img{
+  width:100%;
+  max-width:1100px;
+  height:auto;
+  display:block;
+  border-radius:24px;
+}
+
+.contact-icons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:32px;
+  margin-top:28px;
+  flex-wrap:wrap;
+}
+
+.contact-icon-link{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:#ffffff;
+  font-size:0.75rem;
+  font-weight:900;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  transition:0.25s ease;
+}
+
+.contact-icon-link i{
+  width:54px;
+  height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:1.7rem;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(91,196,255,0.35);
+  box-shadow:0 0 24px rgba(0,170,255,0.25);
+}
+
+.contact-icon-link:hover{
+  color:var(--blue-soft);
+  transform:translateY(-3px);
+}
+
+.contact-icon-link.whatsapp i{
+  background:linear-gradient(135deg, #1fbf5b, #5cff8d);
+  color:#00170a;
+}
+
+.contact-icon-link.email i{
+  background:linear-gradient(135deg, #00aaff, #63d8ff);
+  color:#00111e;
+}
+
+@media (max-width:760px){
+  .contact-icons{
+    gap:24px;
+    margin-top:24px;
+  }
+
+  .contact-icon-link i{
+    width:50px;
+    height:50px;
+    font-size:1.5rem;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -29,24 +112,31 @@
 </nav>
 </header>
 
-<main class="page-content contact-page">
+<main class="page-content">
 
 <section class="page-intro">
 <p class="section-kicker">Contact</p>
 <p>Use WhatsApp or email to ask about setup, plans, or restoring files.</p>
 </section>
 
-<section class="contact-card">
+<section class="contact-visual">
+<img src="assets/images/contact-panel.png" alt="Contact The Cloud Agent">
+</section>
 
-<a href="https://wa.me/27781270843" class="btn btn-primary">
-<i class="fab fa-whatsapp"></i> WhatsApp
+<section class="contact-icons">
+
+<a href="https://wa.me/27781270843" class="contact-icon-link whatsapp">
+<i class="fab fa-whatsapp"></i>
+<span>WhatsApp</span>
 </a>
 
-<a href="mailto:mrsisekobunu@gmail.com" class="btn btn-secondary">
-<i class="fas fa-envelope"></i> Email
+<a href="mailto:mrsisekobunu@gmail.com" class="contact-icon-link email">
+<i class="fas fa-envelope"></i>
+<span>Email</span>
 </a>
 
 </section>
+
 </main>
 
 <script src="script.js"></script>
